@@ -5,6 +5,7 @@ struct ContentView: View {
         
         NavigationView {
             VStack {
+                Logout()
                 NavigationLink("Sign Up") {
                     Signup()
                 }
