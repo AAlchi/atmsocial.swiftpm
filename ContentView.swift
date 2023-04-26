@@ -5,7 +5,7 @@ struct ContentView: View {
         
         NavigationView {
             VStack {
-                Signup()
+                Logout()
             }
             .navigationTitle("ATM Social")
         }
