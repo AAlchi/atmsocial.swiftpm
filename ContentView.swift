@@ -2,10 +2,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Signup()
+        
         NavigationView {
             VStack {
+                Signup()
                 Text("Hello")
             }
             .navigationTitle("ATM Social")
