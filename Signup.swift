@@ -58,10 +58,10 @@ struct Signup: View {
             .padding()
         }
         
-        Button("Sign Up") {
-            
+        NavigationLink("Create Account") {
+            //Homepage
         }
-        .frame(width: 150, height: 50)
+        .frame(width: 200, height: 75)
         .background(.blue)
         .foregroundColor(.black)
         .font(.custom("American Typewriter", size: 30))
