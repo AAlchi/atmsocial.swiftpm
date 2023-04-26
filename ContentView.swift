@@ -6,7 +6,6 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 Signup()
-                Text("Hello")
             }
             .navigationTitle("ATM Social")
         }
