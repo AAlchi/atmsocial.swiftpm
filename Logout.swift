@@ -5,7 +5,6 @@
 //  Created by Matthew Kao on 4/26/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct Logout: View {
