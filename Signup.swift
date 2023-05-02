@@ -52,15 +52,17 @@ struct Signup: View {
             }
             .padding()
         }
-        
         Button("Sign Up") {
-//            isShowingHomePage = false
+            ContentView(showingOptionView: false)
+//            NavigationLink("") {
+//                Home()
+//            }
+//            .frame(width: 200, height: 75)
+//            .background(.blue)
+//            .foregroundColor(.black)
+//            .font(.custom("Times New Roman", size: 30))
+//            .clipShape(RoundedRectangle(cornerRadius: 10))
+//            .padding()
         }
-        .frame(width: 200, height: 75)
-        .background(.blue)
-        .foregroundColor(.black)
-        .font(.custom("Times New Roman", size: 30))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .padding()
     }
 }
