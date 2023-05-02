@@ -16,19 +16,21 @@ struct Signup: View {
     var body: some View {
         VStack {
             Text("Sign Up")
-                .font(.system(size: 50))
+                .font(.system(size: 60))
                 VStack {
                     TextField("Enter Username", text: $username)
-                        .font(.system(size: 40))
+                        .font(.system(size: 30))
                         .frame(width: 800)
                         .textFieldStyle(.roundedBorder)
+                    
+
                 }
                     .padding()
                 
                 VStack {
                     
                     TextField("Enter Full Name", text: $fullName)
-                        .font(.system(size: 40))
+                        .font(.system(size: 30))
                         .frame(width: 800)
                         .textFieldStyle(.roundedBorder)
                 }
@@ -36,7 +38,7 @@ struct Signup: View {
 
             VStack {
                 TextField("Enter Email", text: $email)
-                    .font(.system(size: 40))
+                    .font(.system(size: 30))
                     .frame(width: 800)
                     .textFieldStyle(.roundedBorder)
             }
@@ -44,7 +46,7 @@ struct Signup: View {
 
             VStack {
                 SecureField("Enter Password", text: $password)
-                    .font(.system(size: 40))
+                    .font(.system(size: 30))
                     .frame(width: 800)
                     .textFieldStyle(.roundedBorder)
             }
