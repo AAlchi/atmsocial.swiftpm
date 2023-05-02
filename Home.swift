@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Home: View {
     @State var message = ""
-    @State private var allMessagesOne = ["Hi!", "How Are You Today?", "Hi!", "How Are You Today?", "Hi!", "How Are You Today?"]
     @State private var allMessagesTwo = ["one": "Hey.", "two": "I'm Fine Thank you."]
     
     var body: some View {
