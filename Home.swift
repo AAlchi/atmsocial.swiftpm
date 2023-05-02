@@ -9,15 +9,12 @@ import SwiftUI
 
 struct Home: View {
     @State var message = ""
-    
-    
     @State private var allMessagesOne = ["Hi!", "How Are You Today?", "Hi!", "How Are You Today?", "Hi!", "How Are You Today?"]
     @State private var allMessagesTwo = ["one": "Hey.", "two": "I'm Fine Thank you.", "two": "Hi!", "one": "How Are You Today?", "two": "Hi!", "one":  "How Are You Today?"]
     
     var body: some View {
         VStack {
             HStack {
-                
                 Text("Chatting with ATM")
                     .font(.system(size: 40))
                     .padding()
@@ -37,23 +34,12 @@ struct Home: View {
                                 .background(Color.green)
                                 .cornerRadius(20)
                             Spacer()
-                            
                         }
-                        
                     }
-                    
                     Spacer()
                 }
                 .padding()
-                
-                
-                
-                
             }
-            
-            
-            
-            
             HStack {
                 TextField("Chat Away", text: $message)
                     .frame(width: 800)
@@ -68,11 +54,6 @@ struct Home: View {
                 .cornerRadius(5)
             }
             .padding()
-            
-            
         }
-        
     }
-    
-    
 }
