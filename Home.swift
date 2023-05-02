@@ -12,7 +12,7 @@ struct Home: View {
     
     
     @State private var allMessagesOne = ["Hi!", "How Are You Today?", "Hi!", "How Are You Today?", "Hi!", "How Are You Today?"]
-    @State private var allMessagesTwo = ["one": "Hey.", "two": "I'm Fine Thank you.", "two": "Hi!", "one": "How Are You Today?", "two": "Hi!", "one":  "How Are You Today?"]
+    @State private var allMessagesTwo = ["one": "Hey.", "two": "I'm Fine Thank you."]
     
     var body: some View {
         VStack {
@@ -27,16 +27,28 @@ struct Home: View {
             ScrollView(){
                 Spacer()
                 VStack {
-                    ForEach(allMessagesTwo, id: \.self) {messages in
+                    ForEach(allMessagesTwo.keys.sorted(), id: \.self) {messages in
                         HStack {
-                            Text(messages)
-                                .frame(width: 500)
-                                .padding()
-                                .font(.system(size: 20))
-                                .foregroundColor(Color.white)
-                                .background(Color.green)
-                                .cornerRadius(20)
-                            Spacer()
+                            if (messages == "one") {
+                                Text("\(allMessagesTwo[messages]!)")
+                                    .frame(width: 500)
+                                    .padding()
+                                    .font(.system(size: 20))
+                                    .foregroundColor(Color.white)
+                                    .background(Color.green)
+                                    .cornerRadius(20)
+                                Spacer()
+                            } else {
+                                Spacer()
+                                Text("\(allMessagesTwo[messages]!)")
+                                    .frame(width: 500)
+                                    .padding()
+                                    .font(.system(size: 20))
+                                    .foregroundColor(Color.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(20)
+                            }
+                            
                             
                         }
                         

@@ -1,36 +1,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showingSignInPage =  true
+    @State var showingOptionView = false
     var body: some View {
-        
-        NavigationView {
-            VStack {
-                NavigationLink("Sign Up") {
-                    Signup()
-                }
-                .frame(width: 200, height: 100)
-                .background(.blue)
-                .foregroundColor(.black)
-                .font(.custom("American Typewriter", size: 25))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding()
-                NavigationLink("Sign In") {
-                    //SignIn
-                }
-                .frame(width: 200, height: 100)
-                .background(.blue)
-                .foregroundColor(.black)
-                .font(.custom("American Typewriter", size: 25))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding()
-            }
-            .navigationTitle("ATM Social")
-            .sheet(isPresented: $showingSignInPage) {
-                
-            }
+        Button("Choose an option") {
+            showingOptionView = true
         }
-        .navigationViewStyle(.stack)
+        .frame(width: 100, height: 50)
+        .foregroundColor(.white)
+        .background(.blue)
+        .sheet(isPresented: $showingOptionView) {
+            Option()
+        }
     }
 }
 
