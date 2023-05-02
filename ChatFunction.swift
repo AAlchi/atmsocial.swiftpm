@@ -9,5 +9,9 @@ import SwiftUI
 
 struct ChatFunction: Identifiable {
     let id = UUID()
-    
+    let reciever: String
+    let sender: String
+    let text: String
+    let dateSent: Date
+    let type: String
 }

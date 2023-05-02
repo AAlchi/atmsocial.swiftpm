@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Home: View {
     @State var message = ""
-    @State private var allMessagesTwo = ["one": "Hey.", "two": "I'm Fine Thank you."]
+    @State private var allMessagesTwo: [ChatFunction] = []
     
     var body: some View {
         VStack {
@@ -19,15 +19,22 @@ struct Home: View {
                     .font(.system(size: 40))
                     .padding()
                 Spacer()
+                Button("Change") {
+                    
+                }
+                .frame(width: 100)
+                .padding()
+                .border(Color.black)
+                .cornerRadius(5)
             }
             Divider()
             ScrollView(){
                 Spacer()
                 VStack {
-                    ForEach(allMessagesTwo.keys.sorted(), id: \.self) {messages in
+                    ForEach(allMessagesTwo) {messages in
                         HStack {
-                            if (messages == "one") {
-                                Text("\(allMessagesTwo[messages]!)")
+                            if (messages.type == "one") {
+                                Text("\(messages.text)")
                                     .frame(width: 500)
                                     .padding()
                                     .font(.system(size: 20))
@@ -37,7 +44,7 @@ struct Home: View {
                                 Spacer()
                             } else {
                                 Spacer()
-                                Text("\(allMessagesTwo[messages]!)")
+                                Text("\(messages.text)")
                                     .frame(width: 500)
                                     .padding()
                                     .font(.system(size: 20))
@@ -69,7 +76,27 @@ struct Home: View {
                     .padding()
                     .textFieldStyle(.roundedBorder)
                 Button("Send") {
+                    let timedate = Date()
                     
+                    let sendingItem = ChatFunction(reciever: "John", sender: "You", text: message, dateSent: timedate, type:"one")
+                    
+                    allMessagesTwo.append(sendingItem)
+                    
+                    message = ""
+                }
+                .frame(width: 100)
+                .padding()
+                .border(Color.black)
+                .cornerRadius(5)
+                
+                Button("Send Two") {
+                    let timedate = Date()
+                    
+                    let sendingItem = ChatFunction(reciever: "You", sender: "John", text: message, dateSent: timedate, type:"two")
+                    
+                    allMessagesTwo.append(sendingItem)
+                    
+                    message = ""
                 }
                 .frame(width: 100)
                 .padding()
