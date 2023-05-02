@@ -20,7 +20,7 @@ struct Logout: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
                 .alert("Are you sure you want to log out?", isPresented: $showingAlert) {
-                    Button("OK", role: .cancel) { }
+                    Button("Done", role: .cancel) { }
                 }
             }
 }
