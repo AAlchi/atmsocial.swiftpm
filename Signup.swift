@@ -33,7 +33,6 @@ struct Signup: View {
                         .textFieldStyle(.roundedBorder)
                 }
                     .padding()
-            
 
             VStack {
                 TextField("Enter Email", text: $email)
@@ -52,8 +51,8 @@ struct Signup: View {
             .padding()
         }
         
-        NavigationLink("Create Account") {
-            //Homepage
+        Button("Sign Up") {
+//            isShowingHomePage = false
         }
         .frame(width: 200, height: 75)
         .background(.blue)

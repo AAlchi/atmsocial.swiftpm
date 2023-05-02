@@ -1,11 +1,20 @@
+//
+//  Option.swift
+//  atmsocial
+//
+//  Created by Thomas Niezyniecki on 4/28/23.
+//
+
 import SwiftUI
 
-struct ContentView: View {
-    @State var showingSignInPage =  true
+struct Option: View {
+    @State private var isShowingOptionView = true
+    
     var body: some View {
         
         NavigationView {
             VStack {
+//                Logout()
                 NavigationLink("Sign Up") {
                     Signup()
                 }
@@ -15,8 +24,9 @@ struct ContentView: View {
                 .font(.custom("American Typewriter", size: 25))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
+                
                 NavigationLink("Sign In") {
-                    //SignIn
+                    //SignIn()
                 }
                 .frame(width: 200, height: 100)
                 .background(.blue)
@@ -26,9 +36,6 @@ struct ContentView: View {
                 .padding()
             }
             .navigationTitle("ATM Social")
-            .sheet(isPresented: $showingSignInPage) {
-                
-            }
         }
         .navigationViewStyle(.stack)
     }
