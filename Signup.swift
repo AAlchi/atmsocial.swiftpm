@@ -21,7 +21,7 @@ struct Signup: View {
                 VStack {
                     TextField("Enter Username", text: $username)
                         .font(.system(size: 30))
-                        .frame(width: 500)
+                        .frame(width: 600)
                         .textFieldStyle(.roundedBorder)
                     
                     
@@ -32,7 +32,7 @@ struct Signup: View {
                     
                     TextField("Enter Full Name", text: $fullName)
                         .font(.system(size: 30))
-                        .frame(width: 500)
+                        .frame(width: 600)
                         .textFieldStyle(.roundedBorder)
                 }
                 .padding()

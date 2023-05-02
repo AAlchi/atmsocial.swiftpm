@@ -14,7 +14,6 @@ struct Home: View {
     var body: some View {
         VStack {
             HStack {
-                
                 Text("Chatting with ATM")
                     .font(.system(size: 40))
                     .padding()
@@ -55,21 +54,11 @@ struct Home: View {
                             
                             
                         }
-                        
                     }
-                    
                     Spacer()
                 }
                 .padding()
-                
-                
-                
-                
             }
-            
-            
-            
-            
             HStack {
                 TextField("Chat Away", text: $message)
                     .frame(width: 800)
@@ -104,11 +93,6 @@ struct Home: View {
                 .cornerRadius(5)
             }
             .padding()
-            
-            
         }
-        
     }
-    
-    
 }
