@@ -14,11 +14,10 @@ struct Option: View {
         
         NavigationView {
             VStack {
-//                Logout()
                 NavigationLink("Sign Up") {
                     Signup()
                 }
-                .frame(width: 200, height: 100)
+                .frame(width: 800, height: 300)
                 .background(.blue)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))
@@ -28,7 +27,7 @@ struct Option: View {
                 NavigationLink("Sign In") {
                     //SignIn()
                 }
-                .frame(width: 200, height: 100)
+                .frame(width: 800, height: 300)
                 .background(.blue)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))

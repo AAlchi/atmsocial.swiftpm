@@ -39,11 +39,14 @@ struct Signup: View {
                 
                 VStack {
                     TextField("Enter Email", text: $email)
-                        .font(.system(size: 30))
-                        .frame(width: 500)
+                        .padding()
                         .textFieldStyle(.roundedBorder)
+                        .font(.system(size: 18))
                 }
                 .padding()
+                .font(.system(size: 30))
+                .frame(width: 600)
+                .textFieldStyle(.roundedBorder)
                 
                 VStack {
                     SecureField("Enter Password", text: $password)
@@ -54,7 +57,7 @@ struct Signup: View {
                 .padding()
                 
                 
-                NavigationLink(destination: Home()
+                NavigationLink(destination: ChooseChat()
                     .navigationBarBackButtonHidden(true)
                 ) {
                     Text("Sign Up")
