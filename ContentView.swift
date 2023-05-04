@@ -7,8 +7,8 @@ struct ContentView: View {
             showingOptionView = true
         }
         .frame(width: 100, height: 50)
-        .foregroundColor(.white)
-        .background(.blue)
+        .foregroundColor(.black)
+        .background(.gray)
         .sheet(isPresented: $showingOptionView) {
             Option()
         }

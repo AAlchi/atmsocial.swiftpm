@@ -19,7 +19,7 @@ struct Option: View {
                     Signup()
                 }
                 .frame(width: 200, height: 100)
-                .background(.blue)
+                .background(.gray)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -29,7 +29,7 @@ struct Option: View {
                     //SignIn()
                 }
                 .frame(width: 200, height: 100)
-                .background(.blue)
+                .background(.gray)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))
                 .clipShape(RoundedRectangle(cornerRadius: 10))

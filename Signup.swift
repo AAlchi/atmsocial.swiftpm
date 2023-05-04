@@ -57,7 +57,7 @@ struct Signup: View {
 //            isShowingHomePage = false
         }
         .frame(width: 200, height: 75)
-        .background(.blue)
+        .background(.gray)
         .foregroundColor(.black)
         .font(.custom("Times New Roman", size: 30))
         .clipShape(RoundedRectangle(cornerRadius: 10))
