@@ -14,53 +14,64 @@ struct Signup: View {
     @State private var password = ""
     
     var body: some View {
-        VStack {
-            Text("Sign Up")
-                .font(.system(size: 60))
+            
+            VStack {
+                Text("Sign Up")
+                    .font(.system(size: 60))
                 VStack {
                     TextField("Enter Username", text: $username)
                         .font(.system(size: 30))
-                        .frame(width: 500)
+                        .frame(width: 600)
                         .textFieldStyle(.roundedBorder)
                     
-
+                    
                 }
-                    .padding()
+                .padding()
                 
                 VStack {
                     
                     TextField("Enter Full Name", text: $fullName)
                         .font(.system(size: 30))
+                        .frame(width: 600)
+                        .textFieldStyle(.roundedBorder)
+                }
+                .padding()
+                
+                VStack {
+                    TextField("Enter Email", text: $email)
+                        .padding()
+                        .textFieldStyle(.roundedBorder)
+                        .font(.system(size: 18))
+                }
+                .padding()
+                .font(.system(size: 30))
+                .frame(width: 600)
+                .textFieldStyle(.roundedBorder)
+                
+                VStack {
+                    SecureField("Enter Password", text: $password)
+                        .font(.system(size: 30))
                         .frame(width: 500)
                         .textFieldStyle(.roundedBorder)
                 }
-                    .padding()
-
-            VStack {
-                TextField("Enter Email", text: $email)
-                    .font(.system(size: 30))
-                    .frame(width: 500)
-                    .textFieldStyle(.roundedBorder)
-            }
                 .padding()
-
-            VStack {
-                SecureField("Enter Password", text: $password)
-                    .font(.system(size: 30))
-                    .frame(width: 500)
-                    .textFieldStyle(.roundedBorder)
+                
+                
+                NavigationLink(destination: ChooseChat()
+                    .navigationBarBackButtonHidden(true)
+                ) {
+                    Text("Sign Up")
+                        .frame(width: 200, height: 75)
+                        .background(.blue)
+                        .foregroundColor(.black)
+                        .font(.custom("Times New Roman", size: 30))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
+                
             }
-            .padding()
+            
+            
+            
         }
-        
-        Button("Sign Up") {
-//            isShowingHomePage = false
-        }
-        .frame(width: 200, height: 75)
-        .background(.gray)
-        .foregroundColor(.black)
-        .font(.custom("Times New Roman", size: 30))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .padding()
-    }
 }
