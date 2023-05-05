@@ -29,8 +29,7 @@ struct Home: View {
                     ForEach(allMessagesTwo) {messages in
                         HStack {
                             if (messages.type == "one") {
-                                Text("\(messages.text)")
-                                    .font(.custom("American Typewriter", size: 25))
+                                Text("\(message)")
                                     .frame(width: 500)
                                     .padding()
                                     .font(.system(size: 20))
@@ -40,8 +39,7 @@ struct Home: View {
                                 Spacer()
                             } else {
                                 Spacer()
-                                Text("\(messages.text)")
-                                    .font(.custom("American Typewriter", size: 25))
+                                Text("\(message)")
                                     .frame(width: 500)
                                     .padding()
                                     .font(.system(size: 20))
@@ -67,7 +65,7 @@ struct Home: View {
                 Button("Send") {
                     let timedate = Date()
                     
-                    let sendingItem = ChatFunction(reciever: "You", sender: "John", text: message, dateSent: timedate, type:"two")
+                    let sendingItem = ChatFunction(reciever: "You", sender: chattingWith, text: message, dateSent: timedate, type:"two")
                     
                     allMessagesTwo.append(sendingItem)
                     
@@ -83,7 +81,7 @@ struct Home: View {
             Button("Send Other") {
                 let timedate = Date()
                 
-                let sendingItem = ChatFunction(reciever: "John", sender: "You", text: message, dateSent: timedate, type:"one")
+                let sendingItem = ChatFunction(reciever: chattingWith, sender: "You", text: message, dateSent: timedate, type:"one")
                 
                 allMessagesTwo.append(sendingItem)
                 
