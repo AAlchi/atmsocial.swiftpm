@@ -14,7 +14,7 @@ struct Logout: View {
                     showingAlert = true
                 }
                 .frame(width: 150, height: 50)
-                .background(.blue)
+                .background(.gray)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 30))
                 .clipShape(RoundedRectangle(cornerRadius: 10))

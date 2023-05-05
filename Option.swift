@@ -17,8 +17,8 @@ struct Option: View {
                 NavigationLink("Sign Up") {
                     Signup()
                 }
-                .frame(width: 800, height: 300)
-                .background(.blue)
+                .frame(width: 200, height: 100)
+                .background(.gray)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -27,8 +27,8 @@ struct Option: View {
                 NavigationLink("Sign In") {
                     //SignIn()
                 }
-                .frame(width: 800, height: 300)
-                .background(.blue)
+                .frame(width: 200, height: 100)
+                .background(.gray)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
