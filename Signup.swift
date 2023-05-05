@@ -17,10 +17,10 @@ struct Signup: View {
             
             VStack {
                 Text("Sign Up")
-                    .font(.system(size: 60))
+                    .font(.custom("American Typewriter", size: 25))
                 VStack {
                     TextField("Enter Username", text: $username)
-                        .font(.system(size: 30))
+                        .font(.custom("American Typewriter", size: 25))
                         .frame(width: 600)
                         .textFieldStyle(.roundedBorder)
                     
@@ -31,7 +31,7 @@ struct Signup: View {
                 VStack {
                     
                     TextField("Enter Full Name", text: $fullName)
-                        .font(.system(size: 30))
+                        .font(.custom("American Typewriter", size: 25))
                         .frame(width: 600)
                         .textFieldStyle(.roundedBorder)
                 }
@@ -39,19 +39,16 @@ struct Signup: View {
                 
                 VStack {
                     TextField("Enter Email", text: $email)
-                        .padding()
+                        .font(.custom("American Typewriter", size: 25))
+                        .frame(width: 600)
                         .textFieldStyle(.roundedBorder)
-                        .font(.system(size: 18))
                 }
                 .padding()
-                .font(.system(size: 30))
-                .frame(width: 600)
-                .textFieldStyle(.roundedBorder)
                 
                 VStack {
                     SecureField("Enter Password", text: $password)
-                        .font(.system(size: 30))
-                        .frame(width: 500)
+                        .font(.custom("American Typewriter", size: 25))
+                        .frame(width: 600)
                         .textFieldStyle(.roundedBorder)
                 }
                 .padding()
@@ -62,9 +59,9 @@ struct Signup: View {
                 ) {
                     Text("Sign Up")
                         .frame(width: 200, height: 75)
-                        .background(.blue)
+                        .background(.gray)
                         .foregroundColor(.black)
-                        .font(.custom("Times New Roman", size: 30))
+                        .font(.custom("American Typewriter", size: 25))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding()
                 }

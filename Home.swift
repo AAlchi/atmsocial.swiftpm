@@ -18,7 +18,7 @@ struct Home: View {
         VStack {
             HStack {
                 Text("Chatting with \(chattingWith)")
-                    .font(.system(size: 40))
+                    .font(.custom("American Typewriter", size: 25))
                     .padding()
                 Spacer()
             }
@@ -30,6 +30,7 @@ struct Home: View {
                         HStack {
                             if (messages.type == "one") {
                                 Text("\(messages.text)")
+                                    .font(.custom("American Typewriter", size: 25))
                                     .frame(width: 500)
                                     .padding()
                                     .font(.system(size: 20))
@@ -40,6 +41,7 @@ struct Home: View {
                             } else {
                                 Spacer()
                                 Text("\(messages.text)")
+                                    .font(.custom("American Typewriter", size: 25))
                                     .frame(width: 500)
                                     .padding()
                                     .font(.system(size: 20))

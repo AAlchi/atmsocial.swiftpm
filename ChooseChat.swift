@@ -14,12 +14,14 @@ struct ChooseChat: View {
     
     var body: some View {
         Text("Choose Who To Chat With")
-            .font(.system(size: 30))
+            .font(.custom("American Typewriter", size: 25))
         List(people, id: \.self) { people in
             Button {
                 chattingWith = people
             } label: {
                 Text(people)
+                    .font(.custom("American Typewriter", size: 25))
+                    .foregroundColor(.black)
             }
             .frame(width: 100)
             .padding()
@@ -28,6 +30,7 @@ struct ChooseChat: View {
                     Text("")
                 }
             )
+            Logout()
         }
     }
 }

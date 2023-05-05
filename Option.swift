@@ -33,8 +33,19 @@ struct Option: View {
                 .font(.custom("American Typewriter", size: 25))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
+                Text("")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            VStack {
+                                Text("ATM Social")
+                                    .font(.custom("American Typewriter", size: 75))
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }
             }
-            .navigationTitle("ATM Social")
+//            .navigationTitle("ATM Social")
         }
         .navigationViewStyle(.stack)
     }
