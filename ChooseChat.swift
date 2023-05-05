@@ -8,26 +8,21 @@
 import SwiftUI
 
 struct ChooseChat: View {
-    @State private var people = ["Person 1", "Person 2", "Person 23"]
+    @State private var people = ["Person 1", "Person 2", "Person 3"]
     
     @State var chattingWith = "Hello"
     
     var body: some View {
         HStack {
             Text("Friends")
-                .font(.custom("American Typewriter", size: 25))
-            NavigationLink(destination: ContentView()
-                .navigationBarBackButtonHidden(true)
-            ) {
-                Text("Log Out")
-                    .frame(width: 200, height: 75)
-                    .background(.gray)
-                    .foregroundColor(.black)
-                    .font(.custom("American Typewriter", size: 25))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+                .font(.custom("American Typewriter", size: 50))
+            HStack {
+                Spacer()
+                NavigationLink(destination: ContentView()
+                    .navigationBarBackButtonHidden(true)) {Text("Log out")}
             }
         }
+        .padding()
         List(people, id: \.self) { people in
             Button {
                 chattingWith = people

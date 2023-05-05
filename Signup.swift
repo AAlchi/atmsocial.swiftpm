@@ -18,6 +18,15 @@ struct Signup: View {
             VStack {
                 Text("Sign Up")
                     .font(.custom("American Typewriter", size: 25))
+                
+                VStack {
+                    TextField("Enter Full Name", text: $fullName)
+                        .font(.custom("American Typewriter", size: 25))
+                        .frame(width: 600)
+                        .textFieldStyle(.roundedBorder)
+                }
+                .padding()
+                
                 VStack {
                     TextField("Enter Username", text: $username)
                         .font(.custom("American Typewriter", size: 25))
@@ -25,15 +34,6 @@ struct Signup: View {
                         .textFieldStyle(.roundedBorder)
                     
                     
-                }
-                .padding()
-                
-                VStack {
-                    
-                    TextField("Enter Full Name", text: $fullName)
-                        .font(.custom("American Typewriter", size: 25))
-                        .frame(width: 600)
-                        .textFieldStyle(.roundedBorder)
                 }
                 .padding()
                 
