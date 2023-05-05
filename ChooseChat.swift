@@ -13,8 +13,21 @@ struct ChooseChat: View {
     @State var chattingWith = "Hello"
     
     var body: some View {
-        Text("Choose Who To Chat With")
-            .font(.custom("American Typewriter", size: 25))
+        HStack {
+            Text("Friends")
+                .font(.custom("American Typewriter", size: 25))
+            NavigationLink(destination: ContentView()
+                .navigationBarBackButtonHidden(true)
+            ) {
+                Text("Log Out")
+                    .frame(width: 200, height: 75)
+                    .background(.gray)
+                    .foregroundColor(.black)
+                    .font(.custom("American Typewriter", size: 25))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
+            }
+        }
         List(people, id: \.self) { people in
             Button {
                 chattingWith = people
@@ -30,7 +43,6 @@ struct ChooseChat: View {
                     Text("")
                 }
             )
-            Logout()
         }
     }
 }

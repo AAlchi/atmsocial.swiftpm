@@ -1,7 +1,7 @@
 import SwiftUI
     
 
-struct MyView: View {
+struct ContentView: View {
     var body: some View {
         Option()
     }
