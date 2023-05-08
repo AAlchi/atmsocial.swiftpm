@@ -14,10 +14,15 @@ struct Option: View {
         
         NavigationView {
             VStack {
+                Text("ATM Social")
+                    .font(.custom("American Typewriter", size: 75))
+                    .foregroundColor(.black)
+                    .padding()
+                //Logo
                 NavigationLink("Sign Up") {
                     SignUp()
                 }
-                .frame(width: 800, height: 140)
+                .frame(width: 250, height: 100)
                 .background(.gray)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))
@@ -27,24 +32,12 @@ struct Option: View {
                 NavigationLink("Log In") {
                     LogIn()
                 }
-                .frame(width: 800, height: 140)
+                .frame(width: 250, height: 100)
                 .background(.gray)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
-                Text("")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .principal) {
-                            VStack {
-                                Text("ATM Social")
-                                    .font(.custom("American Typewriter", size: 75))
-                                    .foregroundColor(.black)
-                                    .padding()
-                            }
-                        }
-                    }
             }
         }
         .navigationViewStyle(.stack)
