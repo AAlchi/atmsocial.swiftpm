@@ -1,31 +1,21 @@
 //
-//  Signup.swift
+//  LogIn.swift
 //  atmsocial
 //
-//  Created by Ali Alchikh Ibrahim on 4/24/23.
+//  Created by Thomas Niezyniecki on 5/8/23.
 //
 
 import SwiftUI
 
-struct SignUp: View {
+struct LogIn: View {
     @State var username = ""
-    @State var fullName = ""
-    @State var email = ""
     @State private var password = ""
     
     var body: some View {
         
         VStack {
-            Text("Sign Up")
+            Text("Log In")
                 .font(.custom("American Typewriter", size: 25))
-            
-            VStack {
-                TextField("Enter Full Name", text: $fullName)
-                    .font(.custom("American Typewriter", size: 25))
-                    .frame(width: 600)
-                    .textFieldStyle(.roundedBorder)
-            }
-            .padding()
             
             VStack {
                 TextField("Enter Username", text: $username)
@@ -34,14 +24,6 @@ struct SignUp: View {
                     .textFieldStyle(.roundedBorder)
                 
                 
-            }
-            .padding()
-            
-            VStack {
-                TextField("Enter Email", text: $email)
-                    .font(.custom("American Typewriter", size: 25))
-                    .frame(width: 600)
-                    .textFieldStyle(.roundedBorder)
             }
             .padding()
             
@@ -57,7 +39,7 @@ struct SignUp: View {
             NavigationLink(destination: ChooseChat()
                 .navigationBarBackButtonHidden(true)
             ) {
-                Text("Sign Up")
+                Text("Log In")
                     .frame(width: 200, height: 75)
                     .background(.gray)
                     .foregroundColor(.black)
@@ -72,3 +54,4 @@ struct SignUp: View {
         
     }
 }
+

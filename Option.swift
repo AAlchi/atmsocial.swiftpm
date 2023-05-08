@@ -15,7 +15,7 @@ struct Option: View {
         NavigationView {
             VStack {
                 NavigationLink("Sign Up") {
-                    Signup()
+                    SignUp()
                 }
                 .frame(width: 200, height: 100)
                 .background(.gray)
@@ -24,8 +24,8 @@ struct Option: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
                 
-                NavigationLink("Sign In") {
-                    //SignIn()
+                NavigationLink("Log In") {
+                    LogIn()
                 }
                 .frame(width: 200, height: 100)
                 .background(.gray)
@@ -45,7 +45,6 @@ struct Option: View {
                         }
                     }
             }
-//            .navigationTitle("ATM Social")
         }
         .navigationViewStyle(.stack)
     }
