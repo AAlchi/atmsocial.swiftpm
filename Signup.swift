@@ -17,7 +17,7 @@ struct Signup: View {
             
             VStack {
                 Text("Sign Up")
-                    .font(.custom("American Typewriter", size: 25))
+                    .font(.custom("American Typewriter", size: 35))
                 VStack {
                     TextField("Enter Username", text: $username)
                         .font(.custom("American Typewriter", size: 25))

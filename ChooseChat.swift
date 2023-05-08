@@ -15,7 +15,9 @@ struct ChooseChat: View {
     var body: some View {
         HStack {
             Text("Friends")
-                .font(.custom("American Typewriter", size: 25))
+                .font(.custom("American Typewriter", size: 35))
+                .padding()
+            Spacer()
             NavigationLink(destination: ContentView()
                 .navigationBarBackButtonHidden(true)
             ) {
