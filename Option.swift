@@ -17,7 +17,7 @@ struct Option: View {
                 NavigationLink("Sign Up") {
                     SignUp()
                 }
-                .frame(width: 200, height: 100)
+                .frame(width: 800, height: 140)
                 .background(.gray)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))
@@ -27,7 +27,7 @@ struct Option: View {
                 NavigationLink("Log In") {
                     LogIn()
                 }
-                .frame(width: 200, height: 100)
+                .frame(width: 800, height: 140)
                 .background(.gray)
                 .foregroundColor(.black)
                 .font(.custom("American Typewriter", size: 25))
@@ -41,6 +41,7 @@ struct Option: View {
                                 Text("ATM Social")
                                     .font(.custom("American Typewriter", size: 75))
                                     .foregroundColor(.black)
+                                    .padding()
                             }
                         }
                     }
