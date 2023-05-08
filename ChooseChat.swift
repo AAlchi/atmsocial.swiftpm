@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChooseChat: View {
-    @State private var people = ["Person 1", "Person 2", "Person 23"]
+    @State private var people = ["Person 1", "Person 2", "Person 3"]
     
     @State var chattingWith = "Hello"
     

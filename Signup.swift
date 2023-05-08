@@ -38,6 +38,16 @@ struct Signup: View {
                 .padding()
                 
                 VStack {
+                    TextField("Enter Username", text: $username)
+                        .font(.custom("American Typewriter", size: 25))
+                        .frame(width: 600)
+                        .textFieldStyle(.roundedBorder)
+                    
+                    
+                }
+                .padding()
+                
+                VStack {
                     TextField("Enter Email", text: $email)
                         .font(.custom("American Typewriter", size: 25))
                         .frame(width: 600)
