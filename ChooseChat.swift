@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ChooseChat: View {
     @State private var people = ["Person 1", "Person 2", "Person 3"]
-    
     @State var chattingWith = "Hello"
-    
     var body: some View {
         HStack {
             Text("Friends")
@@ -22,11 +20,9 @@ struct ChooseChat: View {
                 .navigationBarBackButtonHidden(true)
             ) {
                 Text("Log Out")
-                    .frame(width: 200, height: 75)
-                    .background(.gray)
+                    .frame(width: 150, height: 50)
                     .foregroundColor(.black)
-                    .font(.custom("American Typewriter", size: 25))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .font(.custom("American Typewriter", size: 30))
                     .padding()
             }
         }
