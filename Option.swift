@@ -14,14 +14,9 @@ struct Option: View {
         GeometryReader { geometry in
             NavigationView {
                 VStack {
-                    Text("ATM Social")
-                        .font(.custom("American Typewriter", size: 75))
-                        .foregroundColor(.black)
-                        .padding()
-                        
-                    Image("ATM-Logo")
+                    Image("ATMSocial")
                         .resizable()
-                        .frame(width: geometry.size.width * 0.3, height: geometry.size.width * 0.3)
+                        .frame(width: geometry.size.width * 0.75, height: geometry.size.width * 0.75)
                     NavigationLink("Sign Up") {
                         SignUp()
                     }
