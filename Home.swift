@@ -11,86 +11,84 @@ struct Home: View {
     @State var message = ""
     @State private var allMessagesTwo: [ChatFunction] = []
     
-
+    
     @State var chattingWith:String
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Chatting with \(chattingWith)")
-                    .font(.custom("American Typewriter", size: 25))
-                    .padding()
-                Spacer()
-            }
-            Divider()
-            ScrollView(){
-                Spacer()
-                VStack {
-                    ForEach(allMessagesTwo) {messages in
-                        HStack {
-                            if (messages.type == "one") {
-                                Text("\(message)")
-                                    .frame(width: 500)
-                                    .padding()
-                                    .font(.system(size: 20))
-                                    .foregroundColor(Color.white)
-                                    .background(Color.green)
-                                    .cornerRadius(20)
-                                Spacer()
-                            } else {
-                                Spacer()
-                                Text("\(message)")
-                                    .frame(width: 500)
-                                    .padding()
-                                    .font(.system(size: 20))
-                                    .foregroundColor(Color.white)
-                                    .background(Color.blue)
-                                    .cornerRadius(20)
-                            }
-                            
-                            
-                        }
-                    }
+        GeometryReader { geometry in
+            VStack {
+                HStack {
+                    Text("Chatting with \(chattingWith)")
+                        .font(.custom("American Typewriter", size: 25))
+                        .padding()
                     Spacer()
                 }
-                .padding()
-            }
-            HStack {
-                TextField("Chat Away", text: $message)
-                    .frame(width: 800)
+                Divider()
+                ScrollView(){
+                    Spacer()
+                    VStack {
+                        ForEach(allMessagesTwo) {messages in
+                            HStack {
+                                if (messages.type == "one") {
+                                    Text("\(message)")
+                                        .frame(width: 500)
+                                        .padding()
+                                        .font(.system(size: 20))
+                                        .foregroundColor(Color.white)
+                                        .background(Color.green)
+                                        .cornerRadius(20)
+                                    Spacer()
+                                } else {
+                                    Spacer()
+                                    Text("\(message)")
+                                        .frame(width: 500)
+                                        .padding()
+                                        .font(.system(size: 20))
+                                        .foregroundColor(Color.white)
+                                        .background(Color.blue)
+                                        .cornerRadius(20)
+                                }
+                                
+                                
+                            }
+                        }
+                        Spacer()
+                    }
                     .padding()
-                    .textFieldStyle(.roundedBorder)
-              
-                
-                Button("Send") {
+                }
+                HStack {
+                    TextField("Chat Away", text: $message)
+                        .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.3)
+                        .padding()
+                        .textFieldStyle(.roundedBorder)
+                    ZStack {
+                        Button(action: {
+                            let timedate = Date()
+                            let sendingItem = ChatFunction(reciever: "You", sender: chattingWith, text: message, dateSent: timedate, type:"two")
+                            allMessagesTwo.append(sendingItem)
+                            message = ""
+                        }, label: {
+                            Image(systemName: "arrow.up.circle.fill")
+                        })
+                        .frame(width: geometry.size.width * 0.03, height: geometry.size.width * 0.03)
+                        .background(.blue)
+                        .cornerRadius(20)
+                        .padding()
+                        .foregroundColor(.black)
+                    }
+                }
+                Button("Send Other") {
                     let timedate = Date()
-                    
-                    let sendingItem = ChatFunction(reciever: "You", sender: chattingWith, text: message, dateSent: timedate, type:"two")
-                    
+                    let sendingItem = ChatFunction(reciever: chattingWith, sender: "You", text: message, dateSent: timedate, type:"one")
                     allMessagesTwo.append(sendingItem)
-                    
                     message = ""
                 }
-                .frame(width: 100)
+                .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.02)
                 .padding()
-                .border(Color.black)
+                .background(.blue)
+                .foregroundColor(.black)
                 .cornerRadius(5)
             }
-            .padding()
-            
-            Button("Send Other") {
-                let timedate = Date()
-                
-                let sendingItem = ChatFunction(reciever: chattingWith, sender: "You", text: message, dateSent: timedate, type:"one")
-                
-                allMessagesTwo.append(sendingItem)
-                
-                message = ""
-            }
-            .frame(width: 100)
-            .padding()
-            .border(Color.black)
-            .cornerRadius(5)
         }
     }
 }
