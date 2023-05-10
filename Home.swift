@@ -107,13 +107,13 @@ struct Home: View {
                             allMessagesTwo.append(sendingItem)
                             message = ""
                         }, label: {
-                            Image(systemName: "arrow.up.circle.fill")
+                            Image(systemName: "arrow.up.circle")
                         })
                         .frame(width: geometry.size.width * 0.03, height: geometry.size.width * 0.03)
                         .background(.blue)
                         .cornerRadius(20)
+                        .foregroundColor(.white)
                         .padding()
-                        .foregroundColor(.black)
                     }
                 }
                 Button("Send Other") {
