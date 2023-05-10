@@ -54,17 +54,29 @@ struct SignUp: View {
             .padding()
             
             
-            NavigationLink(destination: ChooseChat()
-                .navigationBarBackButtonHidden(true)
-            ) {
+
+            
+
+            Button {
+                
+                
+                
+            } label: {
                 Text("Sign Up")
-                    .frame(width: 200, height: 75)
-                    .background(.gray)
-                    .foregroundColor(.black)
                     .font(.custom("American Typewriter", size: 25))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+                    .foregroundColor(.black)
             }
+            .frame(width: 200, height: 75)
+            .background(.gray)
+            .foregroundColor(.black)
+            .font(.custom("American Typewriter", size: 25))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding()
+            .background(
+                NavigationLink(destination: ChooseChat()) {
+                    Text("Sign Up")
+                }
+            )
             
         }
         
