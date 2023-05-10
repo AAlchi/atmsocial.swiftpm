@@ -21,7 +21,7 @@ struct Option: View {
                         
                     Image("ATM-Logo")
                         .resizable()
-                        .scaleEffect(0.5)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.width * 0.3)
                     NavigationLink("Sign Up") {
                         SignUp()
                     }
