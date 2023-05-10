@@ -18,6 +18,7 @@ struct Option: View {
                         .font(.custom("American Typewriter", size: 75))
                         .foregroundColor(.black)
                         .padding()
+                        
                     Image("ATM-Logo")
                         .resizable()
                         .scaleEffect(0.5)
