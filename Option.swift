@@ -16,25 +16,27 @@ struct Option: View {
                 VStack {
                     Image("ATMSocial")
                         .resizable()
-                        .frame(width: geometry.size.width * 0.75, height: geometry.size.width * 0.75)
-                    NavigationLink("Sign Up") {
-                        SignUp()
+                        .frame(width: geometry.size.width * 0.6, height: geometry.size.width * 0.6)
+                    VStack {
+                        NavigationLink("Sign Up") {
+                            SignUp()
+                        }
+                        .frame(width: 250, height: 100)
+                        .background(.gray)
+                        .foregroundColor(.black)
+                        .font(.custom("American Typewriter", size: 25))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                        NavigationLink("Log In") {
+                            LogIn()
+                        }
+                        .frame(width: 250, height: 100)
+                        .background(.gray)
+                        .foregroundColor(.black)
+                        .font(.custom("American Typewriter", size: 25))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
                     }
-                    .frame(width: 250, height: 100)
-                    .background(.gray)
-                    .foregroundColor(.black)
-                    .font(.custom("American Typewriter", size: 25))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
-                    NavigationLink("Log In") {
-                        LogIn()
-                    }
-                    .frame(width: 250, height: 100)
-                    .background(.gray)
-                    .foregroundColor(.black)
-                    .font(.custom("American Typewriter", size: 25))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
                 }
             }
             .navigationViewStyle(.stack)
