@@ -15,3 +15,4 @@ struct ChatFunction: Identifiable {
     let dateSent: Date
     let type: String
 }
+

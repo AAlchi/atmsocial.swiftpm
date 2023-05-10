@@ -13,7 +13,7 @@ struct Home: View {
     
     
     @State var chattingWith:String
-    
+    @State var date = ""
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -30,28 +30,67 @@ struct Home: View {
                         ForEach(allMessagesTwo) {messages in
                             HStack {
                                 if (messages.type == "one") {
-                                    Text("\(message)")
-                                        .frame(width: 500)
-                                        .padding()
-                                        .font(.system(size: 20))
-                                        .foregroundColor(Color.white)
-                                        .background(Color.green)
-                                        .cornerRadius(20)
+                                    HStack {
+                                        
+                                        Text("\(date)")
+                                        Text("\(messages.text)")
+                                            .frame(width: 500)
+                                            .padding()
+                                            .font(.system(size: 20))
+                                            .foregroundColor(Color.white)
+                                            .background(Color.green)
+                                            .cornerRadius(20)
+                                            .gesture(
+                                                DragGesture()
+                                                    .onEnded { action in
+                                                        withAnimation {
+                                                            
+                                                            if action.translation.width > 0 {
+                                                                date = "Date: \(messages.dateSent)"
+                                                            } else {
+                                                                date = ""
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                            )
+                                        
+                                    }
+                                    .padding()
                                     Spacer()
                                 } else {
-                                    Spacer()
-                                    Text("\(message)")
-                                        .frame(width: 500)
-                                        .padding()
-                                        .font(.system(size: 20))
-                                        .foregroundColor(Color.white)
-                                        .background(Color.blue)
-                                        .cornerRadius(20)
+                                    HStack {
+                                        Spacer()
+                                        Text("\(messages.text)")
+                                            .frame(width: 500)
+                                            .padding()
+                                            .font(.system(size: 20))
+                                            .foregroundColor(Color.white)
+                                            .background(Color.blue)
+                                            .cornerRadius(20)
+                                            .gesture(
+                                                DragGesture()
+                                                    .onEnded { action in
+                                                        withAnimation {
+                                                            
+                                                            
+                                                            if action.translation.width < 0 {
+                                                                date = "Date: \(messages.dateSent)"
+                                                            } else {
+                                                                date = ""
+                                                            }
+                                                        }
+                                                    }
+                                            )
+                                        Text("\(date)")
+                                        
+                                    }
+                                    
+                                    
                                 }
-                                
-                                
                             }
                         }
+                        .padding()
                         Spacer()
                     }
                     .padding()
