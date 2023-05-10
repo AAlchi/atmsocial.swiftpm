@@ -61,19 +61,21 @@ struct Home: View {
                         .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.3)
                         .padding()
                         .textFieldStyle(.roundedBorder)
-                    
-                    
-                    Button("Send") {
-                        let timedate = Date()
-                        let sendingItem = ChatFunction(reciever: "You", sender: chattingWith, text: message, dateSent: timedate, type:"two")
-                        allMessagesTwo.append(sendingItem)
-                        message = ""
+                    ZStack {
+                        Button(action: {
+                            let timedate = Date()
+                            let sendingItem = ChatFunction(reciever: "You", sender: chattingWith, text: message, dateSent: timedate, type:"two")
+                            allMessagesTwo.append(sendingItem)
+                            message = ""
+                        }, label: {
+                            Image(systemName: "arrow.up.circle.fill")
+                        })
+                        .frame(width: geometry.size.width * 0.03, height: geometry.size.width * 0.03)
+                        .background(.blue)
+                        .cornerRadius(20)
+                        .padding()
+                        .foregroundColor(.black)
                     }
-                    .frame(width: geometry.size.width * 0.08, height: geometry.size.height * 0.03)
-                    .padding()
-                    .background(.blue)
-                    .foregroundColor(.black)
-                    .cornerRadius(5)
                 }
                 Button("Send Other") {
                     let timedate = Date()
