@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
+
 
 struct Option: View {
     @State private var isShowingOptionView = true
@@ -16,7 +18,7 @@ struct Option: View {
                 VStack {
                     Image("ATMSocial")
                         .resizable()
-                        .frame(width: geometry.size.width * 0.75, height: geometry.size.width * 0.75)
+                        .frame(width: 200, height: 200)
                     NavigationLink("Sign Up") {
                         SignUp()
                     }

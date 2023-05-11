@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseDatabase
+
 
 struct Home: View {
+    //database
+    let thedb = Database.database().reference()
+    
+    //normal code
     @State var message = ""
     @State private var allMessagesTwo: [ChatFunction] = []
     
@@ -29,7 +36,7 @@ struct Home: View {
                     VStack {
                         ForEach(allMessagesTwo) {messages in
                             HStack {
-                                if (messages.type == "one") {
+                                if (messages.type == "1") {
                                     HStack {
                                         
                                         Text("\(date)")
@@ -103,9 +110,15 @@ struct Home: View {
                     ZStack {
                         Button(action: {
                             let timedate = Date()
-                            let sendingItem = ChatFunction(reciever: "You", sender: chattingWith, text: message, dateSent: timedate, type:"two")
-                            allMessagesTwo.append(sendingItem)
+                            
+                            
+                            let allTheData = ["reciever": "You", "sender": "\(chattingWith)", "text": "\(message)", "dateSent": "\(timedate)", "type": "1"]
+                            
+                            let newthedb = thedb.child("chats")
+                            let newnewthedb = newthedb.childByAutoId()
+                            newnewthedb.setValue(allTheData)
                             message = ""
+                            
                         }, label: {
                             Image(systemName: "arrow.up.circle")
                         })
@@ -117,10 +130,7 @@ struct Home: View {
                     }
                 }
                 Button("Send Other") {
-                    let timedate = Date()
-                    let sendingItem = ChatFunction(reciever: chattingWith, sender: "You", text: message, dateSent: timedate, type:"one")
-                    allMessagesTwo.append(sendingItem)
-                    message = ""
+                    
                 }
                 .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.02)
                 .padding()
