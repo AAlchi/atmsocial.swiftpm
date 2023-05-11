@@ -1,24 +1,23 @@
 //
-//  LogIn.swift
-//  atmsocial
+//  ChatGuest.swift
+//  ATM Social
 //
-//  Created by Thomas Niezyniecki on 5/8/23.
+//  Created by Thomas Niezyniecki on 5/11/23.
 //
 
 import SwiftUI
 
-struct LogIn: View {
-    @State var username = ""
-    @State private var password = ""
+struct ChatGuest: View {
+    @State var displayName = ""
     
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .center) {
-                Text("Log In")
+                Text("Display Name")
                     .font(.custom("American Typewriter", size: 25))
                 
                 VStack {
-                    TextField("Enter Username", text: $username)
+                    TextField("Enter Display Name", text: $displayName)
                         .frame(width: geometry.size.width * 0.95, height: geometry.size.width * 0.08)
                         .font(.custom("American Typewriter", size: 25))
                         .textFieldStyle(.roundedBorder)
@@ -26,19 +25,10 @@ struct LogIn: View {
                 }
                 .padding()
                 
-                VStack {
-                    SecureField("Enter Password", text: $password)
-                        .frame(width: geometry.size.width * 0.95, height: geometry.size.width * 0.08)
-                        .font(.custom("American Typewriter", size: 25))
-                        .textFieldStyle(.roundedBorder)
-                }
-                .padding()
-                
-                
                 NavigationLink(destination: ChooseChat()
                     .navigationBarBackButtonHidden(true)
                 ) {
-                    Text("Log In")
+                    Text("Chat")
                         .frame(width: 150, height: 75)
                         .background(.gray)
                         .foregroundColor(.black)
@@ -51,3 +41,5 @@ struct LogIn: View {
         }
     }
 }
+
+

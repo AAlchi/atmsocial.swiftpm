@@ -21,7 +21,7 @@ struct SignUp: View {
                 
                 VStack {
                     TextField("Enter Full Name", text: $fullName)
-                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.1)
+                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.08)
                         .font(.custom("American Typewriter", size: 25))
                         .textFieldStyle(.roundedBorder)
                 }
@@ -29,7 +29,7 @@ struct SignUp: View {
                 
                 VStack {
                     TextField("Enter Username", text: $username)
-                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.1)
+                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.08)
                         .font(.custom("American Typewriter", size: 25))
                         .textFieldStyle(.roundedBorder)
                     
@@ -39,7 +39,7 @@ struct SignUp: View {
                 
                 VStack {
                     TextField("Enter Email", text: $email)
-                        .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.1)
+                        .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.08)
                         .font(.custom("American Typewriter", size: 25))
                         .textFieldStyle(.roundedBorder)
                 }
@@ -47,7 +47,7 @@ struct SignUp: View {
                 
                 VStack {
                     SecureField("Enter Password", text: $password)
-                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.1)
+                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.08)
                         .font(.custom("American Typewriter", size: 25))
                         .textFieldStyle(.roundedBorder)
                 }

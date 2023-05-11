@@ -98,7 +98,6 @@ struct Home: View {
                 HStack {
                     TextField("Chat Away", text: $message)
                         .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.3)
-                        .padding()
                         .textFieldStyle(.roundedBorder)
                     ZStack {
                         Button(action: {
@@ -107,13 +106,13 @@ struct Home: View {
                             allMessagesTwo.append(sendingItem)
                             message = ""
                         }, label: {
-                            Image(systemName: "arrow.up.circle")
+                            Image(systemName: "arrow.up")
+                                .font(.system(size: geometry.size.width * 0.04))
                         })
-                        .frame(width: geometry.size.width * 0.03, height: geometry.size.width * 0.03)
+                        .frame(width: geometry.size.width * 0.06, height: geometry.size.width * 0.06)
                         .background(.blue)
-                        .cornerRadius(20)
+                        .cornerRadius(geometry.size.width * 1)
                         .foregroundColor(.white)
-                        .padding()
                     }
                 }
                 Button("Send Other") {
