@@ -14,59 +14,56 @@ struct SignUp: View {
     @State private var password = ""
     
     var body: some View {
-        
-        VStack {
-            Text("Sign Up")
-                .font(.custom("American Typewriter", size: 25))
-            
+        GeometryReader { geometry in
             VStack {
-                TextField("Enter Full Name", text: $fullName)
-                    .font(.custom("American Typewriter", size: 25))
-                    .frame(width: 600)
-                    .textFieldStyle(.roundedBorder)
-            }
-            .padding()
-            
-            VStack {
-                TextField("Enter Username", text: $username)
-                    .font(.custom("American Typewriter", size: 25))
-                    .frame(width: 600)
-                    .textFieldStyle(.roundedBorder)
-                
-                
-            }
-            .padding()
-            
-            VStack {
-                TextField("Enter Email", text: $email)
-                    .font(.custom("American Typewriter", size: 25))
-                    .frame(width: 600)
-                    .textFieldStyle(.roundedBorder)
-            }
-            .padding()
-            
-            VStack {
-                SecureField("Enter Password", text: $password)
-                    .font(.custom("American Typewriter", size: 25))
-                    .frame(width: 600)
-                    .textFieldStyle(.roundedBorder)
-            }
-            .padding()
-            
-            
-            
-            
-            
-            NavigationLink(destination: ChooseChat()
-                .navigationBarBackButtonHidden(true)
-            ) {
                 Text("Sign Up")
-                    .frame(width: 200, height: 75)
-                    .background(.gray)
-                    .foregroundColor(.black)
                     .font(.custom("American Typewriter", size: 25))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+                
+                VStack {
+                    TextField("Enter Full Name", text: $fullName)
+                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.1)
+                        .font(.custom("American Typewriter", size: 25))
+                        .textFieldStyle(.roundedBorder)
+                }
+                .padding()
+                
+                VStack {
+                    TextField("Enter Username", text: $username)
+                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.1)
+                        .font(.custom("American Typewriter", size: 25))
+                        .textFieldStyle(.roundedBorder)
+                    
+                    
+                }
+                .padding()
+                
+                VStack {
+                    TextField("Enter Email", text: $email)
+                        .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.1)
+                        .font(.custom("American Typewriter", size: 25))
+                        .textFieldStyle(.roundedBorder)
+                }
+                .padding()
+                
+                VStack {
+                    SecureField("Enter Password", text: $password)
+                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.1)
+                        .font(.custom("American Typewriter", size: 25))
+                        .textFieldStyle(.roundedBorder)
+                }
+                .padding()
+                
+                NavigationLink(destination: ChooseChat()
+                    .navigationBarBackButtonHidden(true)
+                ) {
+                    Text("Sign Up")
+                        .frame(width: 200, height: 75)
+                        .background(.gray)
+                        .foregroundColor(.black)
+                        .font(.custom("American Typewriter", size: 25))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
             }
         }
     }

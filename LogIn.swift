@@ -12,46 +12,43 @@ struct LogIn: View {
     @State private var password = ""
     
     var body: some View {
-        
-        VStack {
-            Text("Log In")
-                .font(.custom("American Typewriter", size: 25))
-            
-            VStack {
-                TextField("Enter Username", text: $username)
-                    .font(.custom("American Typewriter", size: 25))
-                    .frame(width: 600)
-                    .textFieldStyle(.roundedBorder)
-                
-                
-            }
-            .padding()
-            
-            VStack {
-                SecureField("Enter Password", text: $password)
-                    .font(.custom("American Typewriter", size: 25))
-                    .frame(width: 600)
-                    .textFieldStyle(.roundedBorder)
-            }
-            .padding()
-            
-            
-            NavigationLink(destination: ChooseChat()
-                .navigationBarBackButtonHidden(true)
-            ) {
+        GeometryReader { geometry in
+            VStack(alignment: .center) {
                 Text("Log In")
-                    .frame(width: 200, height: 75)
-                    .background(.gray)
-                    .foregroundColor(.black)
                     .font(.custom("American Typewriter", size: 25))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+                
+                VStack {
+                    TextField("Enter Username", text: $username)
+                        .frame(width: geometry.size.width * 0.95, height: geometry.size.width * 0.1)
+                        .font(.custom("American Typewriter", size: 25))
+                        .textFieldStyle(.roundedBorder)
+                        .padding()
+                }
+                .padding()
+                
+                VStack {
+                    SecureField("Enter Password", text: $password)
+                        .frame(width: geometry.size.width * 0.95, height: geometry.size.width * 0.1)
+                        .font(.custom("American Typewriter", size: 25))
+                        .textFieldStyle(.roundedBorder)
+                }
+                .padding()
+                
+                
+                NavigationLink(destination: ChooseChat()
+                    .navigationBarBackButtonHidden(true)
+                ) {
+                    Text("Log In")
+                        .frame(width: 150, height: 75)
+                        .background(.gray)
+                        .foregroundColor(.black)
+                        .font(.custom("American Typewriter", size: 25))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
+                
             }
-            
         }
-        
-        
-        
     }
 }
 
