@@ -10,7 +10,6 @@ import Foundation
 import FirebaseDatabase
 import FirebaseCore
 
-
 struct ChatFunction: Identifiable {
     let id = UUID()
     let reciever: String
@@ -19,3 +18,4 @@ struct ChatFunction: Identifiable {
     let dateSent: Date
     let type: String
 }
+
