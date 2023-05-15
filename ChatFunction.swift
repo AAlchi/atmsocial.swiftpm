@@ -7,8 +7,6 @@
 
 import SwiftUI
 import Foundation
-import FirebaseDatabase
-import FirebaseCore
 
 struct ChatFunction: Identifiable {
     let id = UUID()
