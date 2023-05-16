@@ -22,26 +22,18 @@ struct Option: View {
                             .cornerRadius(50)
                         Text("ATM Social").font(.system(size: 20))
                     }
-                   
-                    Button(action: {
-                        popoverPre = true
-                    }, label: {
-                        Text("Chat Now")
-                    })
-                    .frame(width: geometry.size.width * 0.40, height: 100)
+                    
+                    NavigationLink("Chat Now") {
+                        ChatGuest()
+                    }
+                    .frame(width: geometry.size.width * 0.40, height: 70)
                     .background(.gray)
                     .foregroundColor(.black)
                     .font(.custom("American Typewriter", size: 25))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
                     .foregroundColor(Color.white)
-                    .popover(isPresented: $popoverPre) {
-                        ChatGuest()
-                        Button("Cancel") {
-                            popoverPre = false
-                        }
-                    }
-                     
+                    
                 }
             }
             .navigationViewStyle(.stack)
