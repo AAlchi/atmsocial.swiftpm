@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct ChoosePerson: View {
-    @State var people = ["Hello"]
+    @State var people = ["Ali", "Thomas", "Matthew"]
     @AppStorage("displayName") var displayName = ""
     @State var displaysName = ""
     @State private var AddPersonPage = false
     @State var contract = false
     @State var contractOn = false
+     
+
     
     var body: some View {
         
+     
         if (AddPersonPage == true) {
 
                 
@@ -51,7 +54,6 @@ struct ChoosePerson: View {
                                             displayName = displaysName
                                             contractOn = true
                                             AddPersonPage = false
-                                            people.append(displaysName)
                                             
                                         }
                                         .frame(width: geometry.size.width * 0.4, height: 25)
@@ -112,7 +114,7 @@ struct ChoosePerson: View {
                         Button {
                             AddPersonPage = true
                         } label: {
-                            Text("Add People")
+                            Text("Add User")
                         }
                         .frame(width: 100, height: 35)
                         .foregroundColor(.white)

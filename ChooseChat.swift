@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChooseChat: View {
-    @State private var people = ["Person 1", "Person 2", "Person 3"]
+    @State private var people = ["Group Chat", "Option", "Option"]
     @State var chattingWith = "Hello"
     @AppStorage("displayName") var displayName = ""
     @State private var gestureOnOne = false
@@ -19,25 +19,11 @@ struct ChooseChat: View {
                 
                 HStack {
                     VStack {
-                        
                         HStack {
-                            
                             Text("Welcome, \(displayName)")
                                 .font(.custom("American Typewriter", size: 25))
                                 .padding()
                             Spacer()
-                            
-                        }
-                        Divider()
-                        
-                        HStack {
-                            
-                            Text("Friends")
-                                .font(.custom("American Typewriter", size: 20))
-                                .padding()
-                            
-                            Spacer()
-                            
                             Button {
                                 gestureOnOne = true
                             } label: {
@@ -45,22 +31,38 @@ struct ChooseChat: View {
                             }
                             .frame(width: 100, height: 45)
                             .border(.gray)
+                            .font(.custom("American Typewriter", size: 20))
                             .foregroundColor(.white)
+                            .padding()
                             .alert(isPresented: $gestureOnOne) {
                                 Alert(
                                     title: Text("Are You Sure?"),
-                                    primaryButton: .destructive(Text("Yup"), action: {
+                                    primaryButton: .destructive(Text("Yes"), action: {
                                         gestureOnOne = false
                                         displayName = ""
                                     }),
-                                    secondaryButton:  .cancel(Text("Nope"), action: {
+                                    secondaryButton:  .cancel(Text("No"), action: {
                                         gestureOnOne = false
                                     })
                                 )
                             }
-                            .padding()
-                            
                         }
+                        Divider()
+//                        HStack {
+//                            Text("Friends")
+//                                .font(.custom("American Typewriter", size: 20))
+//                                .padding()
+//                            Spacer()
+//                            NavigationLink("Add Friend") {
+//                                AddPerson()
+//                            }
+//                            .navigationBarBackButtonHidden(true)
+//                            .frame(width: 100, height: 45)
+//                            .border(.gray)
+//                            .font(.custom("American typewriter", size: 19))
+//                            .foregroundColor(.white)
+//                            .padding()
+//                        }
                     }
                     .foregroundColor(.white)
                 }

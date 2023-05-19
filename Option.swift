@@ -16,10 +16,10 @@ struct Option: View {
                 VStack {
                     VStack {
                         Text("ATM Social")
-                            .font(.system(size: 60))
+                            .font(.custom("American Typewriter", size: 60))
                             .padding()
-                        Text("YOUR most secure way to chat")
-                            .font(.system(size: 16))
+                        Text("A secure way to chat")
+                            .font(.custom("American Typewriter", size: 16))
                             
                     }
                     .padding()
@@ -28,17 +28,15 @@ struct Option: View {
                         ChooseChat()
                     }
                     .frame(width: geometry.size.width * 0.40, height: 60)
-                    .background(.blue)
+                    .border(.gray)
                     .foregroundColor(.white)
                     .font(.custom("American Typewriter", size: 25))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
-                    .foregroundColor(Color.white)
+                    
                     
                     
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Image("Background"))
             }
             .navigationViewStyle(.stack)
